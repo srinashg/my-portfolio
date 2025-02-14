@@ -1,13 +1,120 @@
+/* index.css */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 960px; /* Adjust as needed */
+  padding: 20px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.simon-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 150px); /* Adjust button size here */
+  grid-template-rows: repeat(2, 150px);    /* Adjust button size here */
+  gap: 10px;
+  position: relative; /* For center circle positioning */
+}
+
+.simon-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 2px solid black; /* Add border to separate buttons */
+  box-sizing: border-box; /* Include border in element's total width and height */
+  display: block; /* Ensure anchor fills the grid cell */
+}
+
+.simon-button.green {
+  background-color: green;
+  grid-column: 1;
+  grid-row: 1;
+  border-top-left-radius: 100%;
+}
+
+.simon-button.red {
+  background-color: red;
+  grid-column: 2;
+  grid-row: 1;
+  border-top-right-radius: 100%;
+}
+
+.simon-button.yellow {
+  background-color: yellow;
+  grid-column: 1;
+  grid-row: 2;
+  border-bottom-left-radius: 100%;
+}
+
+.simon-button.blue {
+  background-color: blue;
+  grid-column: 2;
+  grid-row: 2;
+  border-bottom-right-radius: 100%;
+}
+
+.simon-button.green:hover {
+  background-color: lightgreen;
+}
+
+.simon-button.red:hover {
+  background-color: lightcoral;
+}
+
+.simon-button.yellow:hover {
+  background-color: lightyellow;
+}
+
+.simon-button.blue:hover {
+  background-color: lightskyblue;
+}
+
+
+.main-content {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #1a1a1a; /* Darker background for sections */
+  border-radius: 8px;
+}
+
+.section h2 {
+  color: white;
+  margin-top: 0;
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .simon-nav {
+    grid-template-columns: repeat(2, 100px); /* Smaller buttons for smaller screens */
+    grid-template-rows: repeat(2, 100px);
+  }
 }
